@@ -2870,6 +2870,10 @@ static const struct mmc_fixup blk_fixups[] = {
 	MMC_FIXUP("VZL00M", CID_MANFID_SAMSUNG, CID_OEMID_ANY, add_quirk_mmc,
 		  MMC_QUIRK_SEC_ERASE_TRIM_BROKEN),
 
+	/* Enable secure erase/trim quirk for SEM128 */
+	MMC_FIXUP("SEM128", 0x45, CID_OEMID_ANY, add_quirk_mmc,
+		  MMC_QUIRK_SEC_ERASE_TRIM_BROKEN),
+
 	END_FIXUP
 };
 
